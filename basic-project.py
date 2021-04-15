@@ -16,7 +16,9 @@ while True: # Dosya çalıştığı sürece alttaki kodları çalıştır.
     dogruyer = 0 # Doğru yer değişkenini tanımlıyoruz.
     dongu = 0 # Döngü değişkenini tanımlıyoruz.
     try:
-        tahministek = input("Tahmininiz: ") # Kullanıcıdan 'Tahmin' alıyoruz.
+        tahministek = input("Tahmininizi Girin \n (Çıkmak için X'e basınız.) ->") # Kullanıcıdan 'Tahmin' alıyoruz.
+        if(tahministek.lower()=="x"):
+            break
         tahministek = [int(tahminsayi) for tahminsayi in tahministek] # Kullanıcıdan aldığımız değişkeni 'dizin'e çeviriyoruz.
     except:
         print("lütfen rakam giriniz!")
@@ -28,6 +30,9 @@ while True: # Dosya çalıştığı sürece alttaki kodları çalıştır.
                     print("rakamlar sadece bir kez kullanılmalıdır")
                     break
                 b.append(sayi)
+        if(tahministek[0]==0):
+            print("dört basamaklı sayı sıfır ile başlayamaz")
+            continue
 
         for i in range(0,4):
             if(tutulansayi[i]==tahministek[i]):
@@ -38,8 +43,7 @@ while True: # Dosya çalıştığı sürece alttaki kodları çalıştır.
         if(dogruyer==4):
             print("tebrikler doğru sayıyı buldunuz!")
             break
-        if (tahministek==[0,0,0,0]):
-            break
+
     else:
         print("eksik yada fazla giriş yaptınız")
 
